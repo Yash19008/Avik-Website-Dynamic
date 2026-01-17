@@ -15,5 +15,8 @@ if ($conn->connect_error) {
     die("Database connection failed.");
 }
 
+// Set MySQL time zone to UTC +05:30
+$conn->query("SET time_zone = '+05:30'");
+
 // Set charset
 // $conn->set_charset("utf8mb4");
