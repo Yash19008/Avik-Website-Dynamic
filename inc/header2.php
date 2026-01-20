@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <title>Eventer - HTML 5 Template Preview</title>
+    <title><?= $title ?? 'Worldwide Events and Conference' ?></title>
 
     <!-- Fav Icon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
@@ -28,9 +28,17 @@
     <link href="assets/css/rtl.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/module-css/page-title.css" rel="stylesheet">
-    <link href="assets/css/module-css/news.css" rel="stylesheet">
-    <link href="assets/css/module-css/sidebar.css" rel="stylesheet">
+    <link href="assets/css/module-css/about.css" rel="stylesheet">
+    <link href="assets/css/module-css/mission.css" rel="stylesheet">
+    <link href="assets/css/module-css/team.css" rel="stylesheet">
+    <link href="assets/css/module-css/pricing.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="assets/css/module-css/page-title.css" rel="stylesheet">
+<link href="assets/css/module-css/event.css" rel="stylesheet">
+<link href="assets/css/module-css/cta.css" rel="stylesheet">
+<link href="assets/css/module-css/news.css" rel="stylesheet">
+<link href="assets/css/module-css/blog-details.css" rel="stylesheet">
+<link href="assets/css/module-css/sidebar.css" rel="stylesheet">
 
 </head>
 
@@ -43,33 +51,27 @@
 
 
         <!-- preloader -->
-        <div class="loader-wrap">
+          <div class="loader-wrap">
             <div class="preloader">
                 <div class="preloader-close">close</div>
                 <div id="handle-preloader" class="handle-preloader">
                     <div class="animation-preloader">
                         <div class="spinner"></div>
                         <div class="txt-loading">
-                            <span data-text-preloader="e" class="letters-loading">
-                                e
+                            <span data-text-preloader="W" class="letters-loading">
+                                W
                             </span>
-                            <span data-text-preloader="v" class="letters-loading">
-                                v
+                            <span data-text-preloader="W" class="letters-loading">
+                                W
                             </span>
-                            <span data-text-preloader="e" class="letters-loading">
-                                e
+                            <span data-text-preloader="E" class="letters-loading">
+                                E
                             </span>
-                            <span data-text-preloader="n" class="letters-loading">
-                                n
+                            <span data-text-preloader="&" class="letters-loading">
+                                &
                             </span>
-                            <span data-text-preloader="t" class="letters-loading">
-                                t
-                            </span>
-                            <span data-text-preloader="e" class="letters-loading">
-                                e
-                            </span>
-                            <span data-text-preloader="r" class="letters-loading">
-                                r
+                            <span data-text-preloader="C" class="letters-loading">
+                                C
                             </span>
                         </div>
                     </div>
@@ -77,23 +79,13 @@
             </div>
         </div>
         <!-- preloader end -->
-
-
-        <!-- page-direction -->
-        <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-        </div>
-        <!-- page-direction end -->
-
-
         <!-- main header -->
         <header class="main-header header-style-two">
             <!-- header-lower -->
             <div class="header-lower">
                 <div class="auto-container">
                     <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                        <figure class="logo-box"><a href="index.php"><img src="assets/images/logopp.png" alt=""></a></figure>
                         <div class="menu-area">
                             <!--Mobile Navigation Toggler-->
                             <div class="mobile-nav-toggler">
@@ -102,72 +94,23 @@
                                 <i class="icon-bar"></i>
                             </div>
                             <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                               <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-                                        <li class="dropdown"><a href="#">Home</a>
-                                            <ul>
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                                <li><a href="index-4.html">Home Four</a></li>
-                                                <li><a href="index-onepage.html">OnePage Home</a></li>
-                                                <li class="dropdown"><a href="#">Header Style</a>
-                                                    <ul>
-                                                        <li><a href="index.html">Header Style One</a></li>
-                                                        <li><a href="index-3.html">Header Style Two</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Events</a>
-                                            <ul>
-                                                <li><a href="event.html">Events Schedule</a></li>
-                                                <li><a href="event-details.html">Event Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Pages</a>
-                                            <ul>
-                                                <li class="dropdown"><a href="#">Gallery</a>
-                                                    <ul>
-                                                        <li><a href="gallery.html">Events Gallery</a></li>
-                                                        <li><a href="gallery-2.html">Events Gallery With Text</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown"><a href="#">Speckers</a>
-                                                    <ul>
-                                                        <li><a href="specker.html">Event Speckers</a></li>
-                                                        <li><a href="specker-details.html">Specker Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="about.html">About Event</a></li>
-                                                <li><a href="partner.html">Our Partners</a></li>
-                                                <li><a href="faq.html">Support & FAQ</a></li>
-                                                <li><a href="venue.html">Venue</a></li>
-                                                <li><a href="hotel.html">Hotel Room</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="search.html">Search Not found</a></li>
-                                                <li><a href="error.html">404</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="current dropdown"><a href="#">Blog</a>
-                                            <ul>
-                                                <li><a href="blog.html">Blog Grid</a></li>
-                                                <li><a href="blog-2.html">Blog Standard</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li class="current"><a href="index.php">Home</a></li>
+                                        <li><a href="about-us.php">About Us</a></li>
+                                        <li><a href="events.php">Events</a></li>
+                                        <li><a href="gallery.php">Gallery</a></li>
+                                        <li><a href="blogs.php">Blogs</a></li>
+                                        <li><a href="contact-us.php">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>
                         </div>
                         <div class="menu-right-content">
-                            <div class="btn-box mr_40"><a href="index-2.html" class="theme-btn btn-one">Purchase Ticket</a></div>
-                            <ul class="social-links">
-                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
+                            <div class="support-box">
+                                <div class="icon-box"><i class="icon-1"></i></div>
+                                <a href="tel:+917583936109">75839 36109</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,7 +121,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                            <figure class="logo"><a href="index.php"><img src="assets/images/logopp.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area">
                             <nav class="main-menu clearfix">
@@ -186,12 +129,10 @@
                             </nav>
                         </div>
                         <div class="menu-right-content">
-                            <div class="btn-box mr_40"><a href="index-2.html" class="theme-btn btn-one">Purchase Ticket</a></div>
-                            <ul class="social-links">
-                                <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
+                            <div class="support-box">
+                                <div class="icon-box"><i class="icon-1"></i></div>
+                                <a href="tel:+917583936109">75839 36109</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -206,7 +147,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.php"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -218,11 +159,11 @@
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                        <li><a href="index.php"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="index.php"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="index.php"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="index.php"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="index.php"><span class="fab fa-youtube"></span></a></li>
                     </ul>
                 </div>
             </nav>

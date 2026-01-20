@@ -7,7 +7,7 @@
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget logo-widget">
-                        <figure class="footer-logo"><a href="index.php"><img src="assets/images/logo-2.png" alt=""></a></figure>
+                        <figure class="footer-logo"><a href="index.php"><img src="assets/images/logopp.png" alt=""></a></figure>
                         <p>Pellentesque quis scelerisque justo. the Aenean mauris justo, sagittis ornare felis ut, mattis pretium.</p>
                         <h3>Social Media:</h3>
                         <ul class="social-links">

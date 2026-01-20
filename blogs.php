@@ -99,7 +99,7 @@ include 'inc/header2.php';
                                 <div class="news-block-one">
                                     <div class="inner-box">
                                         <figure class="image-box">
-                                            <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
+                                            <a href="blog-details.php?id=<?= $blog['id']; ?>">
                                                 <img src="./admin/<?= $blog['bg_image']; ?>" alt="">
                                             </a>
                                         </figure>
@@ -110,13 +110,13 @@ include 'inc/header2.php';
                                                 <li>by <?= $blog['added_by']; ?></li>
                                             </ul>
                                             <h3>
-                                                <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
+                                                <a href="blog-details.php?id=<?= $blog['id']; ?>">
                                                     <?= $blog['title']; ?>
                                                 </a>
                                             </h3>
                                             <p><?= substr(strip_tags($blog['content']), 0, 120); ?>...</p>
                                             <div class="link">
-                                                <a href="blog-details.php?slug=<?= $blog['slug']; ?>">Read More</a>
+                                                <a href="blog-details.php?id=<?= $blog['id']; ?>">Read More</a>
                                             </div>
                                         </div>
                                     </div>

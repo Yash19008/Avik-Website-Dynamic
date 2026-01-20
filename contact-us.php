@@ -36,20 +36,25 @@ include 'inc/header2.php';
                     <form method="post" action="" id="contact-form" class="default-form">
                         <div class="row clearfix">
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="username" placeholder="Name*" required="">
+                                <input type="text" name="username" placeholder="Name*" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="email" name="email" placeholder="Email*" required="">
+                                <input type="email" name="email" placeholder="Email*" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="phone" required="" placeholder="Your Phone*">
+                                <input type="text" name="phone" required placeholder="Your Phone*">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="subject" required="" placeholder="Subject">
+                                <input type="text" name="subject" required placeholder="Subject">
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <textarea name="message" placeholder="Enter your comment here"></textarea>
                             </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                <div class="g-recaptcha" data-sitekey="6LefpU0sAAAAAIn2sGXOmNRH629vKLx_abwb3zYI"></div>
+                            </div>
+
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
                                 <button class="theme-btn btn-one" type="submit" name="submit-form">Send Now</button>
                             </div>
@@ -85,7 +90,7 @@ include 'inc/header2.php';
     </div>
 </section>
 <!-- contact-section end -->
-
+<!-- Replace the variables below. -->
 <!-- google-map-section -->
 <section class="google-map-section">
     <div class="map-inner">
@@ -94,6 +99,7 @@ include 'inc/header2.php';
 </section>
 <!-- google-map-section end -->
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <?php
 include 'inc/footer.php';

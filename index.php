@@ -1,5 +1,5 @@
 <?php
-include './admin/inc/db.php';
+include 'admin/inc/db.php';
 include 'inc/header.php';
 ?>
 <link rel="stylesheet" href="assets/css/partners.css">
