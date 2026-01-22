@@ -30,33 +30,29 @@ $result = mysqli_query($conn, $query);
         <div class="sortable-masonry">
             <div class="items-container row clearfix">
 
-                <?php 
+                <?php
                 if (mysqli_num_rows($result) > 0) {
-                    while($row = mysqli_fetch_assoc($result)) {
-                        // We use the 'type' from DB as a CSS class for the filtering system
-                        $filter_class = strtolower($row['type']); 
-                        
-                        // Handle the image path - assuming images are in admin/uploads/gallery/
-                        // If 'link' is just the filename, we append the path.
-                        $image_url = 'admin/uploads/gallery/' . basename($row['link']);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $filter_class = strtolower($row['type']);
+                        $image_url = $row['link'];
                 ?>
-                
-                <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all <?php echo $filter_class; ?>">
-                    <div class="gallery-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <img src="<?php echo $image_url; ?>" alt="Gallery Image">
-                            </figure>
-                            <div class="link">
-                                <a href="<?php echo $image_url; ?>" class="lightbox-image" data-fancybox="gallery">
-                                    <i class="icon-25"></i>
-                                </a>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all <?php echo $filter_class; ?>">
+                            <div class="gallery-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img src="<?php echo $image_url; ?>" alt="Gallery Image">
+                                    </figure>
+                                    <div class="link">
+                                        <a href="<?php echo $image_url; ?>" class="lightbox-image" data-fancybox="gallery">
+                                            <i class="icon-25"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <?php 
+                <?php
                     }
                 } else {
                     echo "<div class='col-12 text-center'><h3>No images found in gallery.</h3></div>";

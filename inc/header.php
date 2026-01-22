@@ -98,11 +98,20 @@
                             <nav class="main-menu navbar-expand-md navbar-light clearfix">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-
-                                        <li class="current"><a href="index.php">Home</a></li>
-                                        <li><a href="about-us.php">About Us</a></li>
+                                        <li class="current dropdown"><a href="index.php">Home</a>
+                                            <ul>
+                                                <li><a href="about-us.php">About Us</a></li>
+                                                <li><a href="services.php">Services</a></li>
+                                                <li><a href="faq.php">FAQ</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="events.php">Events</a></li>
-                                        <li><a href="gallery.php">Gallery</a></li>
+                                        <li class="dropdown"><a href="#">Gallery</a>
+                                            <ul>
+                                                <li><a href="gallery.php">Image Gallery</a></li>
+                                                <li><a href="video-gallery.php">Video Gallery</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="blogs.php">Blogs</a></li>
                                         <li><a href="contact-us.php">Contact</a></li>
                                     </ul>

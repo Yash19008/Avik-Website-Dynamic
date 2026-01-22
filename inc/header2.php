@@ -32,14 +32,17 @@
     <link href="assets/css/module-css/mission.css" rel="stylesheet">
     <link href="assets/css/module-css/team.css" rel="stylesheet">
     <link href="assets/css/module-css/pricing.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="assets/css/module-css/gallery.css" rel="stylesheet">
+    <link href="assets/css/module-css/event-details.css" rel="stylesheet">
+    <link href="assets/css/module-css/team-details.css" rel="stylesheet">
+    <link href="assets/css/module-css/event.css" rel="stylesheet">
+    <link href="assets/css/module-css/cta.css" rel="stylesheet">
+    <link href="assets/css/module-css/news.css" rel="stylesheet">
+    <link href="assets/css/module-css/blog-details.css" rel="stylesheet">
+    <link href="assets/css/module-css/faq.css" rel="stylesheet">
+    <link href="assets/css/module-css/sidebar.css" rel="stylesheet">
     <link href="assets/css/module-css/page-title.css" rel="stylesheet">
-<link href="assets/css/module-css/event.css" rel="stylesheet">
-<link href="assets/css/module-css/cta.css" rel="stylesheet">
-<link href="assets/css/module-css/news.css" rel="stylesheet">
-<link href="assets/css/module-css/blog-details.css" rel="stylesheet">
-<link href="assets/css/module-css/sidebar.css" rel="stylesheet">
-
+    <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
 
 
@@ -51,7 +54,7 @@
 
 
         <!-- preloader -->
-          <div class="loader-wrap">
+        <div class="loader-wrap">
             <div class="preloader">
                 <div class="preloader-close">close</div>
                 <div id="handle-preloader" class="handle-preloader">
@@ -94,12 +97,22 @@
                                 <i class="icon-bar"></i>
                             </div>
                             <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                               <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-                                        <li class="current"><a href="index.php">Home</a></li>
-                                        <li><a href="about-us.php">About Us</a></li>
+                                        <li class="current dropdown"><a href="index.php">Home</a>
+                                            <ul>
+                                                <li><a href="about-us.php">About Us</a></li>
+                                                <li><a href="services.php">Services</a></li>
+                                                <li><a href="faq.php">FAQ</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="events.php">Events</a></li>
-                                        <li><a href="gallery.php">Gallery</a></li>
+                                        <li class="dropdown"><a href="#">Gallery</a>
+                                            <ul>
+                                                <li><a href="gallery.php">Image Gallery</a></li>
+                                                <li><a href="video-gallery.php">Video Gallery</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="blogs.php">Blogs</a></li>
                                         <li><a href="contact-us.php">Contact</a></li>
                                     </ul>

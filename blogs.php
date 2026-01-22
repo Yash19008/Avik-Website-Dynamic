@@ -13,7 +13,7 @@ include 'inc/header2.php';
     <div class="auto-container">
         <div class="content-box">
             <ul class="bread-crumb clearfix mb_20">
-                <li><a href="index.html"># Home</a></li>
+                <li><a href="index.php"># Home</a></li>
                 <li>&nbsp;-&nbsp;</li>
                 <li>Blogs</li>
             </ul>
@@ -73,9 +73,11 @@ include 'inc/header2.php';
                                         b.tags,
                                         b.added_by,
                                         b.created_at,
-                                        c.name AS category_name
+                                        c.name AS category_name,
+                                        users.name AS author_name
                                     FROM blogs b
                                     LEFT JOIN blog_categories c ON c.id = b.cat_id
+                                    LEFT JOIN users ON users.id = b.added_by
                                     $whereSQL
                                     ORDER BY b.created_at DESC
                                     LIMIT $limit OFFSET $offset
@@ -99,7 +101,7 @@ include 'inc/header2.php';
                                 <div class="news-block-one">
                                     <div class="inner-box">
                                         <figure class="image-box">
-                                            <a href="blog-details.php?id=<?= $blog['id']; ?>">
+                                            <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
                                                 <img src="./admin/<?= $blog['bg_image']; ?>" alt="">
                                             </a>
                                         </figure>
@@ -107,16 +109,16 @@ include 'inc/header2.php';
                                             <ul class="info-list mb_15">
                                                 <li><?= date('F d, Y', strtotime($blog['created_at'])); ?></li>
                                                 <li>|</li>
-                                                <li>by <?= $blog['added_by']; ?></li>
+                                                <li>by <?= htmlspecialchars($blog['author_name'] ?? 'Unknown'); ?></li>
                                             </ul>
                                             <h3>
-                                                <a href="blog-details.php?id=<?= $blog['id']; ?>">
+                                                <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
                                                     <?= $blog['title']; ?>
                                                 </a>
                                             </h3>
                                             <p><?= substr(strip_tags($blog['content']), 0, 120); ?>...</p>
                                             <div class="link">
-                                                <a href="blog-details.php?id=<?= $blog['id']; ?>">Read More</a>
+                                                <a href="blog-details.php?slug=<?= $blog['slug']; ?>">Read More</a>
                                             </div>
                                         </div>
                                     </div>

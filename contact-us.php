@@ -15,7 +15,7 @@ include 'inc/header2.php';
     <div class="auto-container">
         <div class="content-box">
             <ul class="bread-crumb clearfix mb_20">
-                <li><a href="index.html"># Home</a></li>
+                <li><a href="index.php"># Home</a></li>
                 <li>&nbsp;-&nbsp;</li>
                 <li>Contact</li>
             </ul>
@@ -81,7 +81,7 @@ include 'inc/header2.php';
                     <div class="single-item">
                         <h6>Let's Call or Email </h6>
                         <ul class="info-list clearfix">
-                            <li><i class="icon-29"></i><a href="contact.html">@templathPath</a></li>
+                            <li><i class="icon-29"></i><a href="contact-us.php">@templathPath</a></li>
                         </ul>
                     </div>
                 </div>

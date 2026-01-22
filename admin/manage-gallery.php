@@ -36,6 +36,7 @@ $gallery = mysqli_query($conn, "SELECT * FROM gallery ORDER BY id DESC");
                                 <th>#</th>
                                 <th>Type</th>
                                 <th>Preview</th>
+                                <th>Featured</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -55,12 +56,18 @@ $gallery = mysqli_query($conn, "SELECT * FROM gallery ORDER BY id DESC");
                                             </video>
                                         <?php endif; ?>
                                     </td>
+                                    <td>
+                                        <?php echo $row['featured'] ?
+                                            '<span class="badge badge-success">Yes</span>' :
+                                            '<span class="badge badge-secondary">No</span>'; ?>
+                                    </td>
                                     <td><?php echo date('d-m-Y', strtotime($row['created_at'])); ?></td>
                                     <td>
                                         <button class="btn btn-sm btn-info editBtn"
                                             data-id="<?php echo $row['id']; ?>"
                                             data-type="<?php echo $row['type']; ?>"
-                                            data-link="<?php echo $row['link']; ?>">
+                                            data-link="<?php echo $row['link']; ?>"
+                                            data-featured="<?php echo $row['featured']; ?>">
                                             Edit
                                         </button>
                                         <button class="btn btn-sm btn-danger deleteBtn"
@@ -99,6 +106,14 @@ $gallery = mysqli_query($conn, "SELECT * FROM gallery ORDER BY id DESC");
                             <option value="">Select</option>
                             <option value="image">Image</option>
                             <option value="video">Video</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Featured</label>
+                        <select name="featured" id="featured" class="form-control" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
                         </select>
                     </div>
 
@@ -152,7 +167,7 @@ $gallery = mysqli_query($conn, "SELECT * FROM gallery ORDER BY id DESC");
             "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
-    
+
     /* ADD */
     $('#addGalleryBtn').click(function() {
         $('#galleryForm')[0].reset();
@@ -167,6 +182,7 @@ $gallery = mysqli_query($conn, "SELECT * FROM gallery ORDER BY id DESC");
         $('#type').val($(this).data('type'));
         $('#old_link').val($(this).data('link'));
         $('#link').val($(this).data('link'));
+        $('#featured').val($(this).data('featured'));
 
         previewContent($(this).data('type'), $(this).data('link'));
         $('#galleryModal').modal('show');

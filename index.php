@@ -55,7 +55,7 @@ include 'inc/header.php';
                         <?php
                         $blogs = mysqli_query(
                             $conn,
-                            "SELECT * FROM blogs ORDER BY created_at DESC LIMIT 9"
+                            "SELECT *, users.name AS author_name FROM blogs LEFT JOIN users ON users.id = blogs.added_by ORDER BY blogs.created_at DESC LIMIT 9"
                         );
 
                         while ($blog = mysqli_fetch_assoc($blogs)) {
@@ -161,6 +161,133 @@ include 'inc/header.php';
 </section>
 <!-- video-section end -->
 
+<!-- team-section -->
+<section class="team-section">
+    <div class="outer-container clearfix">
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-1.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Nick Johns</a></h3>
+                    <span class="designation">President and CEO</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-2.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Jane Cooper</a></h3>
+                    <span class="designation">Founder</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-3.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Wade Warren</a></h3>
+                    <span class="designation">CTO - Eventer</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-4.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Esther Howard</a></h3>
+                    <span class="designation">Project Manager</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-5.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Guy Hawkins</a></h3>
+                    <span class="designation">Digital Designer</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-6.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Lina William</a></h3>
+                    <span class="designation">Marketing Officer</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-7.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Leslie Alexander</a></h3>
+                    <span class="designation">Developer</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-block-one">
+            <div class="inner-box">
+                <div class="bg-layer" style="background-image: url(assets/images/team/team-8.jpg);"></div>
+                <div class="content-box">
+                    <h3><a href="index.php">Cameron Williamson</a></h3>
+                    <span class="designation">Freelance Designer</span>
+                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="index.php">facebook</a></li>
+                    <li><a href="index.php">twitter</a></li>
+                    <li><a href="index.php">linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- team-section end -->
+
 <!-- mission-section -->
 <section class="mission-section pt_140 pb_110 centred">
     <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-11.png);"></div>
@@ -212,7 +339,7 @@ include 'inc/header.php';
 <?php
 $gallery = mysqli_query(
     $conn,
-    "SELECT * FROM gallery WHERE type='image' ORDER BY created_at DESC LIMIT 4"
+    "SELECT * FROM gallery WHERE type='image' AND featured = 1 ORDER BY created_at DESC LIMIT 4"
 );
 
 $galleryData = [];
@@ -246,10 +373,10 @@ while ($row = mysqli_fetch_assoc($gallery)) {
                     <div class="gallery-block-one ml_40">
                         <div class="inner-box">
                             <div class="bg-layer"
-                                style="background-image:url('./admin/<?= $galleryData[0]['link']; ?>');">
+                                style="background-image:url('<?= $galleryData[0]['link']; ?>');">
                             </div>
                             <div class="link">
-                                <a href="./admin/<?= $galleryData[0]['link']; ?>" class="lightbox-image">
+                                <a href="<?= $galleryData[0]['link']; ?>" class="lightbox-image">
                                     <i class="icon-25"></i>
                                 </a>
                             </div>
@@ -266,10 +393,10 @@ while ($row = mysqli_fetch_assoc($gallery)) {
                     <div class="gallery-block-one">
                         <div class="inner-box">
                             <div class="bg-layer"
-                                style="background-image:url('./admin/<?= $galleryData[$i]['link']; ?>');">
+                                style="background-image:url('<?= $galleryData[$i]['link']; ?>');">
                             </div>
                             <div class="link">
-                                <a href="./admin/<?= $galleryData[$i]['link']; ?>" class="lightbox-image">
+                                <a href="<?= $galleryData[$i]['link']; ?>" class="lightbox-image">
                                     <i class="icon-25"></i>
                                 </a>
                             </div>
@@ -419,7 +546,10 @@ while ($row = mysqli_fetch_assoc($gallery)) {
         </div>
         <div class="row clearfix">
             <?php
-            $blogs = mysqli_query($conn, "SELECT * FROM blogs ORDER BY created_at DESC LIMIT 3");
+            $blogs = mysqli_query(
+                $conn,
+                "SELECT *, users.name AS author_name FROM blogs LEFT JOIN users ON users.id = blogs.added_by ORDER BY blogs.created_at DESC LIMIT 3"
+            );
             while ($blog = mysqli_fetch_assoc($blogs)) {
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-12 news-block">
@@ -434,7 +564,7 @@ while ($row = mysqli_fetch_assoc($gallery)) {
                                 <ul class="info-list mb_15">
                                     <li><?= date('F d, Y', strtotime($blog['created_at'])); ?></li>
                                     <li>|</li>
-                                    <li>by <?= $blog['added_by']; ?></li>
+                                    <li>by <?php echo htmlspecialchars($blog['author_name'] ?? 'Unknown'); ?></li>
                                 </ul>
                                 <h3>
                                     <a href="blog-details.php?slug=<?= $blog['slug']; ?>">

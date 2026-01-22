@@ -14,7 +14,8 @@ if (!$data) die("Event not found");
 $images = json_decode($data['images'], true) ?: [];
 $socials = json_decode($data['speaker_socials'], true) ?: [];
 
-function event_image($file) {
+function event_image($file)
+{
     $filename = basename($file);
     return 'admin/uploads/events/' . $filename;
 }
@@ -31,7 +32,7 @@ function event_image($file) {
     <div class="auto-container">
         <div class="content-box">
             <ul class="bread-crumb clearfix mb_20">
-                <li><a href="index.html"># Home</a></li>
+                <li><a href="index.php"># Home</a></li>
                 <li>&nbsp;-&nbsp;</li>
                 <li>Event Details</li>
             </ul>
@@ -64,9 +65,6 @@ function event_image($file) {
                         <h2><?php echo $data['title']; ?></h2>
                         <div class="time"><i class="icon-16"></i><?php echo $data['time']; ?></div>
                     </div>
-                    <div class="btn-box">
-                        <a href="#" class="theme-btn btn-one">Purchase Ticket</a>
-                    </div>
                 </div>
 
                 <div class="row clearfix">
@@ -74,25 +72,7 @@ function event_image($file) {
                         <div class="text-box">
                             <?php echo $data['content']; ?>
                         </div>
-
                         <hr>
-                        <h3 class="mt_20"><?php echo $data['speaker_name']; ?></h3>
-                        <p><em><?php echo $data['speaker_desg']; ?></em></p>
-                        <p><?php echo $data['speaker_desc']; ?></p>
-
-                        <?php if($data['speaker_image']): ?>
-                            <img src="<?php echo event_image($data['speaker_image']); ?>" width="200" class="mt_20 mb_20">
-                        <?php endif; ?>
-
-                        <?php if ($socials): ?>
-                            <h4>Follow Speaker:</h4>
-                            <ul>
-                                <?php foreach($socials as $s): ?>
-                                    <li><a href="<?php echo $s['link']; ?>" target="_blank"><?php echo $s['name']; ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        <?php endif; ?>
-
                     </div>
 
                     <div class="col-lg-3 col-md-12 col-sm-12 info-column">
@@ -117,6 +97,39 @@ function event_image($file) {
     </div>
 </section>
 <!-- event-details end -->
+
+<!-- team-details -->
+<section class="team-details pb_140">
+    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-48.png);"></div>
+    <div class="auto-container">
+        <div class="sec-title mb_40">
+            <span class="sub-title"># Spacker info</span>
+            <h2>About The Speaker</h2>
+        </div>
+        <div class="team-details-content">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-12 col-sm-12 image-column">
+                    <figure class="image-box"><img src="assets/images/team/team-9.jpg" alt=""></figure>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 content-column">
+                    <div class="content-box">
+                        <h3>Nick Johns</h3>
+                        <span class="designation">President and CEO</span>
+                        <p>Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctorelit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
+                        <ul class="list-item clearfix">
+                            <li><span>Email : </span>&nbsp;<a href="event-details.php">templathpath@info.com</a></li>
+                            <li><span>Twitter : </span>&nbsp;<a href="event-details.php">@templathpath</a></li>
+                            <li><span>Website :</span>&nbsp;<a href="event-details.php">templathpath.com</a></li>
+                            <li><span>Interview :</span>&nbsp;<a href="event-details.php">Read the inverview</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- team-details end -->
+
 <?php
 include 'inc/footer.php';
 ?>
