@@ -1,23 +1,28 @@
 <?php
 include './admin/inc/db.php';
+
+$title = "About Us | Worldwide Events and Conference";
+$meta_desc = "Learn about Worldwide Events and Conference – a professional event management company specializing in corporate events, weddings, exhibitions, and party planning across India.";
+
 include 'inc/header2.php';
 ?>
 
 <!-- page-title -->
 <section class="page-title">
     <div class="bg-layer" style="background-image: url(assets/images/background/page-title-4.jpg);"></div>
-    <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-36.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-47.png);"></div>
-    </div>
+
     <div class="auto-container">
         <div class="content-box">
+
+            <!-- SEO Breadcrumbs -->
             <ul class="bread-crumb clearfix mb_20">
-                <li><a href="index.php"># Home</a></li>
+                <li><a href="<?= $baseUrl ?>/">Home</a></li>
                 <li>&nbsp;-&nbsp;</li>
-                <li>About Event</li>
+                <li>About Us</li>
             </ul>
-            <h1>About Event</h1>
+
+            <!-- H1 (ONLY ONE H1 PER PAGE) -->
+            <h1>About Us - Worldwide Events and Conference</h1>
         </div>
     </div>
 </section>
@@ -26,29 +31,47 @@ include 'inc/header2.php';
 
 <!-- about-style-two -->
 <section class="about-style-two pt_200 pb_120">
-    <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-32.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-33.png);"></div>
-    </div>
     <div class="auto-container">
         <div class="row align-items-center">
+
+            <!-- Content -->
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                 <div class="content-box">
+
+                    <!-- H2 -->
                     <div class="sec-title mb_20">
-                        <span class="sub-title"># About The Events</span>
-                        <h2>Vault is an annual event where we come together as a united global community.</h2>
+                        <span class="sub-title">About Our Company</span>
+                        <h2>Creating Memorable Corporate Events, Weddings & Celebrations</h2>
                     </div>
+
                     <div class="text-box">
-                        <p>With our passion, knowledge, creative flair and inspiration, we are dedicated in helping you to achieve your dream wedding day. <br />Ipsum volutpat in aliquam donec elit ac. Sed at aliquet mauris proin. Porttitor pellentesque id eu congue vitae mauris auctor sit varius. Et aliquam sed lorem vitae suspendisse. Posuere sollicitudin volutpat enim convallis donec nulla at. Tortor ut varius cum tellus ut amet arcu ac</p>
+                        <p>
+                            Worldwide Events and Conference is a professional event management company offering
+                            corporate events, wedding planning, exhibitions, and party bookings across India.
+                            With creative vision, expert planning, and flawless execution, we turn ideas into
+                            unforgettable experiences.
+                        </p>
+                        <p>
+                            From concept to completion, our dedicated team ensures every detail is handled with
+                            precision, creativity, and care.
+                        </p>
                     </div>
+
                 </div>
             </div>
+
+            <!-- Images with ALT tags -->
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 <div class="image-box">
-                    <figure class="image image-1"><img src="assets/images/resource/about-4.jpg" alt=""></figure>
-                    <figure class="image image-2"><img src="assets/images/resource/about-1.png" alt=""></figure>
+                    <figure class="image image-1">
+                        <img src="assets/images/resource/about-4.jpg" alt="Corporate event planning by Worldwide Events and Conference">
+                    </figure>
+                    <figure class="image image-2">
+                        <img src="assets/images/resource/about-1.png" alt="Wedding and party planning services">
+                    </figure>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -57,46 +80,58 @@ include 'inc/header2.php';
 
 <!-- mission-section -->
 <section class="mission-section pt_140 pb_110 centred">
-    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-11.png);"></div>
     <div class="auto-container">
+
         <div class="title-inner mb_60">
             <div class="sec-title centred mb_20">
-                <span class="sub-title"># Event Target</span>
+                <span class="sub-title">Our Purpose</span>
                 <h2>Our Mission</h2>
             </div>
-            <p>With our passion, knowledge, creative flair and inspiration, <br />we are dedicated in helping.</p>
+
+            <p>
+                Our mission is to deliver seamless, innovative, and memorable event experiences
+                through creativity, precision, and personalized service.
+            </p>
         </div>
+
         <div class="row clearfix">
+
             <div class="col-lg-4 col-md-6 col-sm-12 mission-block">
-                <div class="mission-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <div class="mission-block-one">
                     <div class="inner-box">
-                        <div class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></div>
-                        <h3><a href="index.php">Day Long Meetup</a></h3>
-                        <p>At QOKO Events, we know that your lighting choices can make or break your event.</p>
-                        <div class="link"><a href="index.php">Read More</a></div>
+                        <div class="icon-box">
+                            <img src="assets/images/icons/icon-2.png" alt="Corporate event meetups">
+                        </div>
+                        <h3>Day-Long Meetups</h3>
+                        <p>Well-planned corporate meetups designed for engagement and impact.</p>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 col-sm-12 mission-block">
-                <div class="mission-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                <div class="mission-block-one">
                     <div class="inner-box">
-                        <div class="icon-box"><img src="assets/images/icons/icon-3.png" alt=""></div>
-                        <h3><a href="index.php">Meet The Leaders</a></h3>
-                        <p>At QOKO Events, we know that your lighting choices can make or break your event.</p>
-                        <div class="link"><a href="index.php">Read More</a></div>
+                        <div class="icon-box">
+                            <img src="assets/images/icons/icon-3.png" alt="Leadership conferences">
+                        </div>
+                        <h3>Meet the Leaders</h3>
+                        <p>Professional conferences connecting industry leaders worldwide.</p>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 col-sm-12 mission-block">
-                <div class="mission-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                <div class="mission-block-one">
                     <div class="inner-box">
-                        <div class="icon-box"><img src="assets/images/icons/icon-4.png" alt=""></div>
-                        <h3><a href="index.php">Ask Questions</a></h3>
-                        <p>At QOKO Events, we know that your lighting choices can make or break your event.</p>
-                        <div class="link"><a href="index.php">Read More</a></div>
+                        <div class="icon-box">
+                            <img src="assets/images/icons/icon-4.png" alt="Event Q&A sessions">
+                        </div>
+                        <h3>Interactive Sessions</h3>
+                        <p>Engaging discussions and Q&A sessions to inspire innovation.</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

@@ -60,6 +60,14 @@ function isActive($page)
                     </a>
                 </li>
 
+                <!-- Works -->
+                <li class="nav-item">
+                    <a href="manage-works.php" class="nav-link <?= isActive('manage-works.php') ?>">
+                        <i class="nav-icon fas fa-video"></i>
+                        <p>Works</p>
+                    </a>
+                </li>
+
                 <!-- Gallery -->
                 <li class="nav-item">
                     <a href="manage-gallery.php" class="nav-link <?= isActive('manage-gallery.php') ?>">

@@ -2,26 +2,25 @@
 include 'admin/inc/db.php';
 include 'inc/header.php';
 ?>
-<link rel="stylesheet" href="assets/css/partners.css">
+<link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/partners.css">
 <!-- banner-section -->
 <section class="banner-section p_relative centred">
-    <div class="bg-layer" style="background-image: url(assets/images/banner/banner-1.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(<?= $baseUrl ?>/assets/images/banner/banner-1.jpg);"></div>
     <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-1.png);"></div>
-        <div class="pattern-2 rotate-me" style="background-image: url(assets/images/shape/shape-2.png);"></div>
-        <div class="pattern-3" style="background-image: url(assets/images/shape/shape-3.png);"></div>
-        <div class="pattern-4" style="background-image: url(assets/images/shape/shape-4.png);"></div>
+        <div class="pattern-1" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-1.png);"></div>
+        <div class="pattern-2 rotate-me" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-2.png);"></div>
+        <div class="pattern-3" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-3.png);"></div>
+        <div class="pattern-4" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-4.png);"></div>
     </div>
     <div class="auto-container">
         <div class="content-box">
             <h2>Worldwide Events and <span>Conferences</span></h2>
-            <a href="events.php" class="theme-btn btn-one">Explore Events</a>
+            <a href="<?= $baseUrl ?>/events" class="theme-btn btn-one">Explore Events</a>
         </div>
     </div>
     <ul class="social-links">
         <li><a href="#"><i class="fab fa-facebook-f"></i>facebook</a></li>
         <li><a href="https://www.instagram.com/worldwideventsconference/"><i class="fab fa-instagram"></i>instagram</a></li>
-
     </ul>
 </section>
 <!-- banner-section end -->
@@ -63,11 +62,11 @@ include 'inc/header.php';
                             <div class="conference-block-one">
                                 <div class="inner-box">
                                     <figure class="image-box">
-                                        <img src="./admin/<?= $blog['bg_image']; ?>" alt="">
+                                        <img src="<?= $baseUrl ?>/admin/<?= $blog['bg_image']; ?>" alt="">
                                     </figure>
                                     <div class="lower-content">
                                         <h3>
-                                            <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
+                                            <a href="<?= $baseUrl ?>/blog/<?= $blog['slug']; ?>">
                                                 <?= $blog['title']; ?>
                                             </a>
                                         </h3>
@@ -75,7 +74,7 @@ include 'inc/header.php';
                                             <?= substr(strip_tags($blog['content']), 0, 120); ?>...
                                         </p>
                                         <div class="link">
-                                            <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
+                                            <a href="<?= $baseUrl ?>/blog/<?= $blog['slug']; ?>">
                                                 Read More
                                             </a>
                                         </div>
@@ -95,9 +94,9 @@ include 'inc/header.php';
 <!-- about-section -->
 <section class="about-section pt_140 pb_140">
     <div class="pattern-layer">
-        <div class="pattern-1 float-bob-y" style="background-image: url(assets/images/shape/shape-5.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-6.png);"></div>
-        <div class="pattern-3" style="background-image: url(assets/images/shape/shape-7.png);"></div>
+        <div class="pattern-1 float-bob-y" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-5.png);"></div>
+        <div class="pattern-2" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-6.png);"></div>
+        <div class="pattern-3" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-7.png);"></div>
     </div>
     <div class="auto-container">
         <div class="row clearfix">
@@ -111,17 +110,17 @@ include 'inc/header.php';
                         </div>
                         <div class="text-box">
                             <p>Worldwide Events and Conference is a Professional Corporate event, Exhibition stall design, fabrication work, party booking and wedding planning Platform. Here we will only provide you with interesting content that you will enjoy very much. We are committed to providing you the best of Corporate event party booking wedding planning, with a focus on reliability and Corporate event party booking wedding planning. we strive to turn our passion for Corporate event party booking wedding planning into a thriving website.</p>
-                            <a href="about-us.php">Read More</a>
+                            <a href="<?= $baseUrl ?>/about-us">Read More</a>
                         </div>
                     </div>
                     <div class="image-inner">
-                        <figure class="image image-1"><img src="assets/images/resource/about-1.jpg" alt=""></figure>
-                        <figure class="image image-2"><img src="assets/images/resource/about-2.jpg" alt=""></figure>
+                        <figure class="image image-1"><img src="<?= $baseUrl ?>/assets/images/resource/about-1.jpg" alt=""></figure>
+                        <figure class="image image-2"><img src="<?= $baseUrl ?>/assets/images/resource/about-2.jpg" alt=""></figure>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-12 col-sm-12 image-column">
-                <figure class="image-box"><img src="assets/images/resource/about-3.jpg" alt=""></figure>
+                <figure class="image-box"><img src="<?= $baseUrl ?>/assets/images/resource/about-3.jpg" alt=""></figure>
             </div>
         </div>
     </div>
@@ -131,19 +130,19 @@ include 'inc/header.php';
 
 <!-- video-section -->
 <section class="video-section pb_120">
-    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-10.png);"></div>
+    <div class="pattern-layer" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-10.png);"></div>
     <span class="big-text">Event Program</span>
     <div class="auto-container">
         <div class="inner-container">
             <div class="content-box">
-                <div class="bg-layer" style="background-image: url(assets/images/background/video-bg.jpg);"></div>
+                <div class="bg-layer" style="background-image: url(<?= $baseUrl ?>/assets/images/background/video-bg.jpg);"></div>
                 <div class="shape">
-                    <div class="shape-1" style="background-image: url(assets/images/shape/shape-8.png);"></div>
-                    <div class="shape-2" style="background-image: url(assets/images/shape/shape-9.png);"></div>
+                    <div class="shape-1" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-8.png);"></div>
+                    <div class="shape-2" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-9.png);"></div>
                 </div>
                 <div class="inner-box">
                     <div class="icon-box"><span>e</span></div>
-                    <h3><a href="index.php">Welcome To Worldwide Events and Conference</a></h3>
+                    <h3><a href="/">Welcome To Worldwide Events and Conference</a></h3>
                     <p>Worldwide Events and Conference is a Professional Corporate event party booking wedding planning Platform.
                     <p>Here we will only provide you with interesting content that you will enjoy very much.</p>
                     <p>We are committed to providing you the best of Corporate event party booking wedding planning, with a focus on reliability and Corporate event party booking wedding planning.</p>
@@ -161,136 +160,43 @@ include 'inc/header.php';
 </section>
 <!-- video-section end -->
 
-<!-- team-section -->
+<?php
+$works = mysqli_query($conn, "SELECT * FROM works ORDER BY created_at DESC LIMIT 8");
+?>
+<!-- works-section -->
 <section class="team-section">
     <div class="outer-container clearfix">
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-1.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Nick Johns</a></h3>
-                    <span class="designation">President and CEO</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
+
+        <?php while ($work = mysqli_fetch_assoc($works)): ?>
+            <div class="team-block-one">
+                <div class="inner-box">
+
+                    <!-- Background Image -->
+                    <div class="bg-layer"
+                         style="background-image: url(<?php echo htmlspecialchars($work['image']); ?>);">
+                    </div>
+
+                    <!-- Content -->
+                    <div class="content-box">
+                        <h3 class="text-white">
+                            <?php echo htmlspecialchars($work['name']); ?>
+                        </h3>
+                        <span class="designation">
+                            <?php echo htmlspecialchars($work['location']); ?>
+                        </span>
+                    </div>
+
                 </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
             </div>
-        </div>
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-2.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Jane Cooper</a></h3>
-                    <span class="designation">Founder</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
-                </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-3.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Wade Warren</a></h3>
-                    <span class="designation">CTO - Eventer</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
-                </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-4.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Esther Howard</a></h3>
-                    <span class="designation">Project Manager</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
-                </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-5.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Guy Hawkins</a></h3>
-                    <span class="designation">Digital Designer</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
-                </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-6.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Lina William</a></h3>
-                    <span class="designation">Marketing Officer</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
-                </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-7.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Leslie Alexander</a></h3>
-                    <span class="designation">Developer</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
-                </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="team-block-one">
-            <div class="inner-box">
-                <div class="bg-layer" style="background-image: url(assets/images/team/team-8.jpg);"></div>
-                <div class="content-box">
-                    <h3><a href="index.php">Cameron Williamson</a></h3>
-                    <span class="designation">Freelance Designer</span>
-                    <p>Nulla in mattis arcu ultrices suspendisse sed amet pulvinarert aliquam.</p>
-                </div>
-                <ul class="social-links clearfix">
-                    <li><a href="index.php">facebook</a></li>
-                    <li><a href="index.php">twitter</a></li>
-                    <li><a href="index.php">linkedin</a></li>
-                </ul>
-            </div>
-        </div>
+        <?php endwhile; ?>
+
     </div>
 </section>
-<!-- team-section end -->
+<!-- works-section end -->
 
 <!-- mission-section -->
 <section class="mission-section pt_140 pb_110 centred">
-    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+    <div class="pattern-layer" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-11.png);"></div>
     <div class="auto-container">
         <div class="title-inner mb_60">
             <div class="sec-title centred mb_20">
@@ -303,30 +209,30 @@ include 'inc/header.php';
             <div class="col-lg-4 col-md-6 col-sm-12 mission-block">
                 <div class="mission-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <div class="icon-box"><img src="assets/images/icons/icon-2.png" alt=""></div>
-                        <h3><a href="index.php">Day Long Meetup</a></h3>
+                        <div class="icon-box"><img src="<?= $baseUrl ?>/assets/images/icons/icon-2.png" alt=""></div>
+                        <h3><a href="/">Day Long Meetup</a></h3>
                         <p>At QOKO Events, we know that your lighting choices can make or break your event.</p>
-                        <div class="link"><a href="index.php">Read More</a></div>
+                        <div class="link"><a href="<?= $baseUrl ?>">Read More</a></div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mission-block">
                 <div class="mission-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <div class="icon-box"><img src="assets/images/icons/icon-3.png" alt=""></div>
-                        <h3><a href="index.php">Meet The Leaders</a></h3>
+                        <div class="icon-box"><img src="<?= $baseUrl ?>/assets/images/icons/icon-3.png" alt=""></div>
+                        <h3><a href="/">Meet The Leaders</a></h3>
                         <p>At QOKO Events, we know that your lighting choices can make or break your event.</p>
-                        <div class="link"><a href="index.php">Read More</a></div>
+                        <div class="link"><a href="<?= $baseUrl ?>">Read More</a></div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mission-block">
                 <div class="mission-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <div class="icon-box"><img src="assets/images/icons/icon-4.png" alt=""></div>
-                        <h3><a href="index.php">Ask Questions</a></h3>
+                        <div class="icon-box"><img src="<?= $baseUrl ?>/assets/images/icons/icon-4.png" alt=""></div>
+                        <h3><a href="/">Ask Questions</a></h3>
                         <p>At QOKO Events, we know that your lighting choices can make or break your event.</p>
-                        <div class="link"><a href="index.php">Read More</a></div>
+                        <div class="link"><a href="<?= $baseUrl ?>">Read More</a></div>
                     </div>
                 </div>
             </div>
@@ -349,8 +255,8 @@ while ($row = mysqli_fetch_assoc($gallery)) {
 ?>
 <section class="gallery-section pt_140">
     <div class="pattern-layer">
-        <div class="pattern-1 float-bob-y" style="background-image: url(assets/images/shape/shape-15.png);"></div>
-        <div class="pattern-2 float-bob-y" style="background-image: url(assets/images/shape/shape-16.png);"></div>
+        <div class="pattern-1 float-bob-y" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-15.png);"></div>
+        <div class="pattern-2 float-bob-y" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-16.png);"></div>
     </div>
 
     <div class="outer-container">
@@ -414,8 +320,8 @@ while ($row = mysqli_fetch_assoc($gallery)) {
 <!-- testimonial-section -->
 <section class="testimonial-section pt_110 pb_140">
     <div class="pattern-layer">
-        <div class="pattern-1 float-bob-x" style="background-image: url(assets/images/shape/shape-17.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-18.png);"></div>
+        <div class="pattern-1 float-bob-x" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-17.png);"></div>
+        <div class="pattern-2" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-18.png);"></div>
     </div>
     <div class="auto-container">
         <div class="title-inner mb_60">
@@ -429,7 +335,7 @@ while ($row = mysqli_fetch_assoc($gallery)) {
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="image-box">
-                        <figure class="image"><img src="assets/images/resource/testimonial-1.jpg" alt=""></figure>
+                        <figure class="image"><img src="<?= $baseUrl ?>/assets/images/resource/testimonial-1.jpg" alt=""></figure>
                         <div class="icon-box"><i class="icon-8"></i></div>
                     </div>
                     <div class="text-box">
@@ -442,7 +348,7 @@ while ($row = mysqli_fetch_assoc($gallery)) {
             <div class="testimonial-block-one">
                 <div class="inner-box">
                     <div class="image-box">
-                        <figure class="image"><img src="assets/images/resource/testimonial-2.jpg" alt=""></figure>
+                        <figure class="image"><img src="<?= $baseUrl ?>/assets/images/resource/testimonial-2.jpg" alt=""></figure>
                         <div class="icon-box"><i class="icon-8"></i></div>
                     </div>
                     <div class="text-box">
@@ -460,12 +366,12 @@ while ($row = mysqli_fetch_assoc($gallery)) {
 
 <!-- cta-section -->
 <section class="cta-section centred pt_140 pb_140">
-    <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/background/cta-bg.jpg);"></div>
+    <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(<?= $baseUrl ?>/assets/images/background/cta-bg.jpg);"></div>
     <div class="auto-container">
         <div class="inner-box">
             <span># Bookings</span>
             <h2>Corporate Event And Party Booking <br /> Wedding Planning</h2>
-            <a href="events.php" class="theme-btn btn-one">Explore Events</a>
+            <a href="<?= $baseUrl ?>/events" class="theme-btn btn-one">Explore Events</a>
         </div>
     </div>
 </section>
@@ -474,7 +380,7 @@ while ($row = mysqli_fetch_assoc($gallery)) {
 
 <!-- clients-section -->
 <section class="clients-section pt_140">
-    <div class="pattern-layer float-bob-y" style="background-image: url(assets/images/shape/shape-19.png);"></div>
+    <div class="pattern-layer float-bob-y" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-19.png);"></div>
     <div class="auto-container">
         <div class="clients-inner mb_60">
             <div class="row align-items-center">
@@ -496,7 +402,7 @@ while ($row = mysqli_fetch_assoc($gallery)) {
                                 while ($partner = mysqli_fetch_assoc($partners)) {
                                 ?>
                                     <div class="marquee-item">
-                                        <img src="./admin/uploads/partners/<?= $partner['image']; ?>" alt="">
+                                        <img src="<?= $baseUrl ?>/admin/uploads/partners/<?= $partner['image']; ?>" alt="">
                                     </div>
                                 <?php } ?>
 
@@ -505,7 +411,7 @@ while ($row = mysqli_fetch_assoc($gallery)) {
                                 while ($partner = mysqli_fetch_assoc($partners)) {
                                 ?>
                                     <div class="marquee-item">
-                                        <img src="./admin/uploads/partners/<?= $partner['image']; ?>" alt="">
+                                        <img src="<?= $baseUrl ?>/admin/uploads/partners/<?= $partner['image']; ?>" alt="">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -533,8 +439,8 @@ while ($row = mysqli_fetch_assoc($gallery)) {
 <!-- news-section -->
 <section class="news-section pt_140 pb_110">
     <div class="pattern-layer">
-        <div class="pattern-1 rotate-me" style="background-image: url(assets/images/shape/shape-20.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-21.png);"></div>
+        <div class="pattern-1 rotate-me" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-20.png);"></div>
+        <div class="pattern-2" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-21.png);"></div>
     </div>
     <div class="auto-container">
         <div class="title-inner mb_60 centred">
@@ -556,8 +462,8 @@ while ($row = mysqli_fetch_assoc($gallery)) {
                     <div class="news-block-one">
                         <div class="inner-box">
                             <figure class="image-box">
-                                <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
-                                    <img src="./admin/<?= $blog['bg_image']; ?>" alt="">
+                                <a href="<?= $baseUrl ?>/blog/<?= $blog['slug']; ?>">
+                                    <img src="<?= $baseUrl ?>/admin/<?= $blog['bg_image']; ?>" alt="">
                                 </a>
                             </figure>
                             <div class="lower-content">
@@ -567,13 +473,13 @@ while ($row = mysqli_fetch_assoc($gallery)) {
                                     <li>by <?php echo htmlspecialchars($blog['author_name'] ?? 'Unknown'); ?></li>
                                 </ul>
                                 <h3>
-                                    <a href="blog-details.php?slug=<?= $blog['slug']; ?>">
+                                    <a href="<?= $baseUrl ?>/blog/<?= $blog['slug']; ?>">
                                         <?= $blog['title']; ?>
                                     </a>
                                 </h3>
                                 <p><?= substr(strip_tags($blog['content']), 0, 100); ?>...</p>
                                 <div class="link">
-                                    <a href="blog-details.php?slug=<?= $blog['slug']; ?>">Read More</a>
+                                    <a href="<?= $baseUrl ?>/blog/<?= $blog['slug']; ?>">Read More</a>
                                 </div>
                             </div>
                         </div>

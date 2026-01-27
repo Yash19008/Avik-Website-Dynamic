@@ -1,0 +1,58 @@
+# ===============================
+# PHP Handler (cPanel)
+# ===============================
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
+</IfModule>
+
+RewriteEngine On
+
+# ===============================
+# FORCE HTTPS (optional but recommended)
+# ===============================
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ===============================
+# HOME PAGE
+# ===============================
+RewriteRule ^$ index.php [L]
+
+# ===============================
+# STATIC PAGES
+# ===============================
+RewriteRule ^about-us/?$ about-us.php [L]
+RewriteRule ^events/?$ events.php [L]
+RewriteRule ^contact/?$ contact.php [L]
+RewriteRule ^faq/?$ faq.php [L]
+RewriteRule ^gallery/?$ gallery.php [L]
+RewriteRule ^video-gallery/?$ video-gallery.php [L]
+
+# ===============================
+# BLOG SYSTEM
+# ===============================
+
+# Blog listing
+RewriteRule ^blogs/?$ blogs.php [L]
+
+# Pagination
+RewriteRule ^blogs/page/([0-9]+)/?$ blogs.php?page=$1 [L,QSA]
+
+# Category & tags
+RewriteRule ^blogs/category/([0-9]+)/?$ blogs.php?category=$1 [L,QSA]
+RewriteRule ^blogs/tag/([^/]+)/?$ blogs.php?tag=$1 [L,QSA]
+
+# Blog details (ONLY ONE RULE)
+RewriteRule ^blog/([a-zA-Z0-9-]+)/?$ blog-details.php?slug=$1 [L,QSA]
+
+# ===============================
+# EVENTS
+# ===============================
+RewriteRule ^event/([a-zA-Z0-9-]+)/?$ event-details.php?slug=$1 [L,QSA]
+
+# ===============================
+# REMOVE .php (SAFE VERSION)
+# ===============================
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]

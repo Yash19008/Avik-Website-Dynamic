@@ -1,25 +1,36 @@
 <?php
 include './admin/inc/db.php';
+
+/* ================= SEO META ================= */
+$title = "Contact Us | Worldwide Events and Conference";
+$meta_desc = "Get in touch with Worldwide Events and Conference for event planning, weddings, corporate events, and conferences. Call, email, or send us a message today.";
+
 include 'inc/header2.php';
 ?>
-<link href="assets/css/module-css/page-title.css" rel="stylesheet">
-<link href="assets/css/module-css/contact.css" rel="stylesheet">
+
+<link href="<?= $baseUrl ?>/assets/css/module-css/contact.css" rel="stylesheet">
 
 <!-- page-title -->
 <section class="page-title">
-    <div class="bg-layer" style="background-image: url(assets/images/background/page-title-7.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(<?= $baseUrl ?>/assets/images/background/page-title-7.jpg);"></div>
     <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-36.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-47.png);"></div>
+        <div class="pattern-1" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-36.png);"></div>
+        <div class="pattern-2" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-47.png);"></div>
     </div>
     <div class="auto-container">
         <div class="content-box">
-            <ul class="bread-crumb clearfix mb_20">
-                <li><a href="index.php"># Home</a></li>
-                <li>&nbsp;-&nbsp;</li>
-                <li>Contact</li>
-            </ul>
-            <h1>Contact Us</h1>
+
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ul class="bread-crumb clearfix mb_20">
+                    <li><a href="<?= $baseUrl ?>/">Home</a></li>
+                    <li>&nbsp;-&nbsp;</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+
+            <!-- H1 -->
+            <h1>Contact Worldwide Events and Conference</h1>
         </div>
     </div>
 </section>
@@ -27,80 +38,136 @@ include 'inc/header2.php';
 
 
 <!-- contact-section -->
-<section class="contact-section pt_140 pb_140">
-    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-49.png);"></div>
+<section class="contact-section pt_140 pb_140"
+         itemscope
+         itemtype="https://schema.org/ContactPage">
+
+    <div class="pattern-layer" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-49.png);"></div>
+
     <div class="auto-container">
         <div class="row clearfix">
+
+            <!-- CONTACT FORM -->
             <div class="col-lg-9 col-md-12 col-sm-12 form-column">
                 <div class="form-inner">
-                    <form method="post" action="" id="contact-form" class="default-form">
+
+                    <form method="post"
+                          action=""
+                          id="contact-form"
+                          class="default-form"
+                          aria-label="Contact form">
+
                         <div class="row clearfix">
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="username" placeholder="Name*" required>
+                                <input type="text" name="username" placeholder="Your Name*" required aria-required="true">
                             </div>
+
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="email" name="email" placeholder="Email*" required>
+                                <input type="email" name="email" placeholder="Your Email*" required aria-required="true">
                             </div>
+
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="phone" required placeholder="Your Phone*">
+                                <input type="text" name="phone" placeholder="Phone Number*" required>
                             </div>
+
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="subject" required placeholder="Subject">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                <textarea name="message" placeholder="Enter your comment here"></textarea>
+                                <input type="text" name="subject" placeholder="Subject*" required>
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                <div class="g-recaptcha" data-sitekey="6LefpU0sAAAAAIn2sGXOmNRH629vKLx_abwb3zYI"></div>
+                                <textarea name="message" placeholder="How can we help you?"></textarea>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                <div class="g-recaptcha"
+                                     data-sitekey="6LefpU0sAAAAAIn2sGXOmNRH629vKLx_abwb3zYI"></div>
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                <button class="theme-btn btn-one" type="submit" name="submit-form">Send Now</button>
+                                <button class="theme-btn btn-one" type="submit" name="submit-form">
+                                    Send Message
+                                </button>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
-            <div class="col-lg-3 col-md-12 col-sm-12 info-column">
+
+            <!-- CONTACT INFO -->
+            <div class="col-lg-3 col-md-12 col-sm-12 info-column"
+                 itemscope
+                 itemtype="https://schema.org/LocalBusiness">
+
+                <meta itemprop="name" content="Worldwide Events and Conference">
+
                 <div class="info-inner">
+
                     <div class="single-item mb_60">
-                        <h6>Be Creative Our Team</h6>
+                        <h2>Contact Details</h2>
                         <ul class="info-list clearfix">
-                            <li><i class="icon-27"></i><a href="mailto:example@templatepath.com">example@templatepath.com</a></li>
-                            <li><i class="icon-28"></i><a href="tel:7045550127">(704) 555-0127</a></li>
+                            <li>
+                                <i class="icon-27"></i>
+                                <a href="mailto:example@templatepath.com" itemprop="email">
+                                    example@templatepath.com
+                                </a>
+                            </li>
+                            <li>
+                                <i class="icon-28"></i>
+                                <a href="tel:7045550127" itemprop="telephone">
+                                    (704) 555-0127
+                                </a>
+                            </li>
                         </ul>
                     </div>
+
                     <div class="single-item mb_60">
-                        <h6>Let's Call or Email</h6>
+                        <h2>Business Enquiries</h2>
                         <ul class="info-list clearfix">
-                            <li><i class="icon-27"></i><a href="mailto:example@info.com">example@info.com</a></li>
-                            <li><i class="icon-28"></i><a href="tel:4065550120">(406) 555-0120</a></li>
+                            <li>
+                                <i class="icon-27"></i>
+                                <a href="mailto:example@info.com">example@info.com</a>
+                            </li>
+                            <li>
+                                <i class="icon-28"></i>
+                                <a href="tel:4065550120">(406) 555-0120</a>
+                            </li>
                         </ul>
                     </div>
+
                     <div class="single-item">
-                        <h6>Let's Call or Email </h6>
+                        <h2>Social</h2>
                         <ul class="info-list clearfix">
-                            <li><i class="icon-29"></i><a href="contact-us.php">@templathPath</a></li>
+                            <li>
+                                <i class="icon-29"></i>
+                                <a href="<?= $baseUrl ?>/contact">@WorldwideEvents</a>
+                            </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 <!-- contact-section end -->
-<!-- Replace the variables below. -->
+
+
 <!-- google-map-section -->
 <section class="google-map-section">
     <div class="map-inner">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55945.16225505631!2d-73.90847969206546!3d40.66490264739892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1601263396347!5m2!1sen!2sbd" width="600" height="535" frameborder="0" style="border:0; width: 100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.726375674068!2d77.4436929752998!3d28.607984375678125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee5d3506faf1%3A0xf1b789fb5f1d64c1!2sAjnara%20Homes!5e0!3m2!1sen!2sin!4v1767855199734!5m2!1sen!2sin" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
-<!-- google-map-section end -->
+
+<?php include 'inc/footer.php'; ?>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<?php
-include 'inc/footer.php';
-?>

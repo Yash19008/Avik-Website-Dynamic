@@ -16,8 +16,8 @@ $socials = json_decode($data['speaker_socials'], true) ?: [];
 
 function event_image($file)
 {
-    $filename = basename($file);
-    return 'admin/uploads/events/' . $filename;
+    if (!$file) return 'assets/images/placeholder.jpg';
+    return 'admin/uploads/events/' . basename($file);
 }
 
 ?>
@@ -78,16 +78,19 @@ function event_image($file)
                     <div class="col-lg-3 col-md-12 col-sm-12 info-column">
                         <div class="info-inner">
                             <div class="single-info-box">
+                                <div class="light-icon"><img src="assets/images/icons/icon-12.png" alt=""></div>
                                 <h3>Event Info :</h3>
-                                <span><?php echo $data['info']; ?></span>
+                                <span><img src="assets/images/icons/icon-11.png" alt=""><?php echo $data['info']; ?></span>
                             </div>
                             <div class="single-info-box">
+                                <div class="light-icon"><img src="assets/images/icons/icon-14.png" alt=""></div>
                                 <h3>Event Date :</h3>
-                                <span><?php echo $data['date']; ?></span>
+                                <span><img src="assets/images/icons/icon-13.png" alt=""><?php echo $data['date']; ?></span>
                             </div>
                             <div class="single-info-box">
+                                <div class="light-icon"><img src="assets/images/icons/icon-14.png" alt=""></div>
                                 <h3>Event Time :</h3>
-                                <span><?php echo $data['time']; ?></span>
+                                <span><img src="assets/images/icons/icon-13.png" alt=""><?php echo $data['time']; ?></span>
                             </div>
                         </div>
                     </div>
@@ -103,27 +106,56 @@ function event_image($file)
     <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-48.png);"></div>
     <div class="auto-container">
         <div class="sec-title mb_40">
-            <span class="sub-title"># Spacker info</span>
+            <span class="sub-title"># Speaker Info</span>
             <h2>About The Speaker</h2>
         </div>
+
         <div class="team-details-content">
             <div class="row align-items-center">
+
+                <!-- Speaker Image -->
                 <div class="col-lg-5 col-md-12 col-sm-12 image-column">
-                    <figure class="image-box"><img src="assets/images/team/team-9.jpg" alt=""></figure>
+                    <figure class="image-box">
+                        <?php if (!empty($data['speaker_image'])): ?>
+                            <img src="<?php echo event_image($data['speaker_image']); ?>" alt="">
+                        <?php else: ?>
+                            <img src="assets/images/team/default-speaker.jpg" alt="">
+                        <?php endif; ?>
+                    </figure>
                 </div>
+
+                <!-- Speaker Content -->
                 <div class="col-lg-7 col-md-12 col-sm-12 content-column">
                     <div class="content-box">
-                        <h3>Nick Johns</h3>
-                        <span class="designation">President and CEO</span>
-                        <p>Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctorelit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
-                        <ul class="list-item clearfix">
-                            <li><span>Email : </span>&nbsp;<a href="event-details.php">templathpath@info.com</a></li>
-                            <li><span>Twitter : </span>&nbsp;<a href="event-details.php">@templathpath</a></li>
-                            <li><span>Website :</span>&nbsp;<a href="event-details.php">templathpath.com</a></li>
-                            <li><span>Interview :</span>&nbsp;<a href="event-details.php">Read the inverview</a></li>
-                        </ul>
+
+                        <h3><?php echo htmlspecialchars($data['speaker_name']); ?></h3>
+                        <span class="designation">
+                            <?php echo htmlspecialchars($data['speaker_desg']); ?>
+                        </span>
+
+                        <p>
+                            <?php echo nl2br(htmlspecialchars($data['speaker_desc'])); ?>
+                        </p>
+
+                        <?php if (!empty($socials)): ?>
+                            <ul class="list-item clearfix">
+                                <?php foreach ($socials as $s): ?>
+                                    <?php if (!empty($s['name']) && !empty($s['link'])): ?>
+                                        <li>
+                                            <span><?php echo htmlspecialchars($s['name']); ?> :</span>
+                                            &nbsp;
+                                            <a href="<?php echo htmlspecialchars($s['link']); ?>" target="_blank" rel="noopener">
+                                                <?php echo htmlspecialchars($s['link']); ?>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

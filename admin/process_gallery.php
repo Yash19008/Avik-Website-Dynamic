@@ -3,6 +3,7 @@ include 'inc/db.php';
 header('Content-Type: application/json');
 
 $baseUrl = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+$baseUrl .= "admin/";
 
 $uploadDir = 'uploads/gallery/';
 $maxSize = 10 * 1024 * 1024;

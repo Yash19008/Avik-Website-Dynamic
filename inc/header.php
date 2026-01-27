@@ -9,37 +9,42 @@
     <title><?= $title ?? 'Worldwide Events and Conference' ?></title>
 
     <!-- Fav Icon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?= $baseUrl ?>/assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+    
+    <link rel="canonical" href="<?= $baseUrl . $_SERVER['REQUEST_URI']; ?>">
+    
+    <title>About Us | Worldwide Events and Conference</title>
+    <meta name="description" content="<?= $meta_desc ?? ($title ?? 'Worldwide Events and Conference') ?>">
 
     <!-- Stylesheets -->
-    <link href="assets/css/font-awesome-all.css" rel="stylesheet">
-    <link href="assets/css/flaticon.css" rel="stylesheet">
-    <link href="assets/css/owl.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/nice-select.css" rel="stylesheet">
-    <link href="assets/css/elpath.css" rel="stylesheet">
-    <link href="assets/css/color.css" id="jssDefault" rel="stylesheet">
-    <link href="assets/css/rtl.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/module-css/banner.css" rel="stylesheet">
-    <link href="assets/css/module-css/conference.css" rel="stylesheet">
-    <link href="assets/css/module-css/about.css" rel="stylesheet">
-    <link href="assets/css/module-css/video.css" rel="stylesheet">
-    <link href="assets/css/module-css/team.css" rel="stylesheet">
-    <link href="assets/css/module-css/mission.css" rel="stylesheet">
-    <link href="assets/css/module-css/event.css" rel="stylesheet">
-    <link href="assets/css/module-css/gallery.css" rel="stylesheet">
-    <link href="assets/css/module-css/testimonial.css" rel="stylesheet">
-    <link href="assets/css/module-css/cta.css" rel="stylesheet">
-    <link href="assets/css/module-css/clients.css" rel="stylesheet">
-    <link href="assets/css/module-css/news.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/font-awesome-all.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/flaticon.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/owl.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/animate.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/nice-select.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/elpath.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/color.css" id="jssDefault" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/rtl.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/style.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/banner.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/conference.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/about.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/video.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/team.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/mission.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/event.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/gallery.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/testimonial.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/cta.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/clients.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/module-css/news.css" rel="stylesheet">
+    <link href="<?= $baseUrl ?>/assets/css/responsive.css" rel="stylesheet">
 
 </head>
 
@@ -87,7 +92,7 @@
             <div class="header-lower">
                 <div class="auto-container">
                     <div class="outer-box">
-                        <figure class="logo-box"><a href="index.php"><img src="assets/images/logopp.png" alt=""></a></figure>
+                        <figure class="logo-box"><a href="<?= $baseUrl ?>"><img src="<?= $baseUrl ?>/assets/images/logopp.png" alt=""></a></figure>
                         <div class="menu-area">
                             <!--Mobile Navigation Toggler-->
                             <div class="mobile-nav-toggler">
@@ -98,22 +103,21 @@
                             <nav class="main-menu navbar-expand-md navbar-light clearfix">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-                                        <li class="current dropdown"><a href="index.php">Home</a>
+                                        <li class="current dropdown"><a href="<?= $baseUrl ?>">Home</a>
                                             <ul>
-                                                <li><a href="about-us.php">About Us</a></li>
-                                                <li><a href="services.php">Services</a></li>
-                                                <li><a href="faq.php">FAQ</a></li>
+                                                <li><a href="<?= $baseUrl ?>/about-us">About Us</a></li>
+                                                <li><a href="<?= $baseUrl ?>/faq">FAQ</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="events.php">Events</a></li>
+                                        <li><a href="<?= $baseUrl ?>/events">Events</a></li>
                                         <li class="dropdown"><a href="#">Gallery</a>
                                             <ul>
-                                                <li><a href="gallery.php">Image Gallery</a></li>
-                                                <li><a href="video-gallery.php">Video Gallery</a></li>
+                                                <li><a href="<?= $baseUrl ?>/gallery">Image Gallery</a></li>
+                                                <li><a href="<?= $baseUrl ?>/video-gallery">Video Gallery</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blogs.php">Blogs</a></li>
-                                        <li><a href="contact-us.php">Contact</a></li>
+                                        <li><a href="<?= $baseUrl ?>/blogs">Blogs</a></li>
+                                        <li><a href="<?= $baseUrl ?>/contact-us">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -133,7 +137,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.php"><img src="assets/images/logopp.png" alt=""></a></figure>
+                            <figure class="logo"><a href="<?= $baseUrl ?>"><img src="<?= $baseUrl ?>/assets/images/logopp.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area">
                             <nav class="main-menu clearfix">
@@ -159,7 +163,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.php"><img src="assets/images/logopp.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="<?= $baseUrl ?>"><img src="<?= $baseUrl ?>/assets/images/logopp.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -171,11 +175,9 @@
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100089025364664"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="https://www.instagram.com/worldwideventsconference"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="https://www.youtube.com/@worldwideventsconference"><span class="fab fa-youtube"></span></a></li>
                     </ul>
                 </div>
             </nav>

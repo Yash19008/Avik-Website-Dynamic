@@ -26,108 +26,164 @@ if ($id) {
 
 <div class="content-wrapper">
     <section class="content-header">
-        <h1><?php echo $id ? 'Edit' : 'Add'; ?> Event</h1>
+        <div class="container-fluid">
+            <h1><?php echo $id ? 'Edit' : 'Add'; ?> Event</h1>
+        </div>
     </section>
 
     <section class="content">
-        <div class="card">
-            <div class="card-body">
+        <form id="eventForm" enctype="multipart/form-data">
 
-                <form id="eventForm" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="hidden" name="old_image" value="<?php echo $data['speaker_image']; ?>">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="old_image" value="<?php echo $data['speaker_image']; ?>">
+            <input type="hidden" name="removed_images" id="removed_images">
+            <input type="hidden" name="speaker_socials" id="speaker_socials">
 
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" name="title" id="title" class="form-control" value="<?php echo htmlspecialchars($data['title']); ?>" required>
+            <!-- EVENT DETAILS -->
+            <div class="card">
+                <div class="card-header"><h5>Event Details</h5></div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" name="title" id="title"
+                                       class="form-control"
+                                       value="<?php echo htmlspecialchars($data['title']); ?>" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Slug</label>
+                                <input type="text" name="slug" id="slug"
+                                       class="form-control"
+                                       value="<?php echo $data['slug']; ?>">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Slug</label>
-                        <input type="text" name="slug" id="slug" class="form-control" value="<?php echo $data['slug']; ?>">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Date</label>
+                            <input type="text" name="date" class="form-control" value="<?php echo $data['date']; ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Time</label>
+                            <input type="text" name="time" class="form-control" value="<?php echo $data['time']; ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Info</label>
+                            <input type="text" name="info" class="form-control"
+                                   value="<?php echo htmlspecialchars($data['info']); ?>">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Event Images</label>
-                        <input type="file" name="images[]" class="form-control mb-2" multiple>
+                </div>
+            </div>
 
-                        <?php
-                        $imgs = json_decode($data['images'] ?? '[]', true);
-                        if ($imgs):
-                        ?>
-                            <div class="row">
-                                <?php foreach ($imgs as $img): ?>
-                                    <div class="col-md-2 text-center">
-                                        <img src="<?php echo $img; ?>" class="img-fluid mb-1">
-                                        <button type="button"
+            <!-- EVENT IMAGES -->
+            <div class="card">
+                <div class="card-header"><h5>Event Images</h5></div>
+                <div class="card-body">
+
+                    <input type="file" name="images[]" class="form-control mb-3" multiple>
+
+                    <?php
+                    $imgs = json_decode($data['images'] ?? '[]', true);
+                    if ($imgs):
+                    ?>
+                        <div class="row">
+                            <?php foreach ($imgs as $img): ?>
+                                <div class="col-md-2 text-center mb-3">
+                                    <img src="<?php echo $img; ?>" class="img-fluid rounded mb-1">
+                                    <button type="button"
                                             class="btn btn-danger btn-sm removeImage"
                                             data-img="<?php echo $img; ?>">
-                                            Remove
-                                        </button>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endif; ?>
-
-                        <input type="hidden" name="removed_images" id="removed_images">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Date</label>
-                        <input type="text" name="date" class="form-control" value="<?php echo $data['date']; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Time</label>
-                        <input type="text" name="time" class="form-control" value="<?php echo $data['time']; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Info</label>
-                        <input type="text" name="info" class="form-control" value="<?php echo htmlspecialchars($data['info']); ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Content</label>
-                        <textarea name="content" id="content" class="form-control"><?php echo $data['content']; ?></textarea>
-                    </div>
-
-                    <hr>
-                    <h5>Speaker</h5>
-
-                    <input class="form-control mb-2" name="speaker_name" placeholder="Name" value="<?php echo $data['speaker_name']; ?>">
-                    <input class="form-control mb-2" name="speaker_desg" placeholder="Designation" value="<?php echo $data['speaker_desg']; ?>">
-                    <textarea class="form-control mb-2" name="speaker_desc" placeholder="Description"><?php echo $data['speaker_desc']; ?></textarea>
-
-                    <input type="file" name="speaker_image" class="form-control mb-2">
-                    <?php if ($data['speaker_image']): ?>
-                        <img src="<?php echo $data['speaker_image']; ?>" width="120">
+                                        Remove
+                                    </button>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     <?php endif; ?>
 
-                    <hr>
-                    <h5>Speaker Socials</h5>
+                </div>
+            </div>
 
-                    <table class="table" id="socialTable">
+            <!-- EVENT CONTENT -->
+            <div class="card">
+                <div class="card-header"><h5>Event Content</h5></div>
+                <div class="card-body">
+                    <textarea name="content" id="content" class="form-control">
+                        <?php echo $data['content']; ?>
+                    </textarea>
+                </div>
+            </div>
+
+            <!-- SPEAKER DETAILS -->
+            <div class="card">
+                <div class="card-header"><h5>Speaker Details</h5></div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input class="form-control mb-2"
+                                   name="speaker_name"
+                                   placeholder="Speaker Name"
+                                   value="<?php echo $data['speaker_name']; ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control mb-2"
+                                   name="speaker_desg"
+                                   placeholder="Designation"
+                                   value="<?php echo $data['speaker_desg']; ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="file" name="speaker_image" class="form-control mb-2">
+                        </div>
+                    </div>
+
+                    <?php if ($data['speaker_image']): ?>
+                        <img src="<?php echo $data['speaker_image']; ?>" width="120" class="rounded mb-3">
+                    <?php endif; ?>
+
+                    <textarea class="form-control"
+                              name="speaker_desc"
+                              placeholder="Speaker Description"><?php echo $data['speaker_desc']; ?></textarea>
+
+                </div>
+            </div>
+
+            <!-- SPEAKER SOCIALS -->
+            <div class="card">
+                <div class="card-header"><h5>Speaker Socials</h5></div>
+                <div class="card-body">
+
+                    <table class="table table-bordered" id="socialTable">
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Link</th>
-                                <th></th>
+                                <th width="50"></th>
                             </tr>
                         </thead>
                         <tbody></tbody>
                     </table>
 
-                    <button type="button" class="btn btn-sm btn-secondary" id="addSocial">Add Social</button>
+                    <button type="button" class="btn btn-secondary btn-sm" id="addSocial">
+                        Add Social
+                    </button>
 
-                    <input type="hidden" name="speaker_socials" id="speaker_socials">
-
-                    <br><br>
-                    <button class="btn btn-success">Save</button>
-                </form>
-
+                </div>
             </div>
-        </div>
+
+            <!-- SAVE -->
+            <div class="text-right mb-4">
+                <button class="btn btn-success btn-lg px-5">Save Event</button>
+            </div>
+
+        </form>
     </section>
 </div>
 
@@ -147,20 +203,35 @@ if ($id) {
     });
 
     /* socials */
-    let socials = <?php echo $data['speaker_socials'] ?: '[]'; ?>;
+    let socials = <?php
+    echo json_encode(
+        $data['speaker_socials']
+            ? json_decode($data['speaker_socials'], true)
+            : []
+    );
+    ?>;
 
     function renderSocials() {
         let html = '';
         socials.forEach((s, i) => {
-            html += `<tr>
-            <td><input class="form-control" value="${s.name}" onchange="socials[${i}].name=this.value"></td>
-            <td><input class="form-control" value="${s.link}" onchange="socials[${i}].link=this.value"></td>
-            <td><button type="button" class="btn btn-danger btn-sm" onclick="socials.splice(${i},1);renderSocials()">X</button></td>
-        </tr>`;
+            html += `
+            <tr>
+                <td>
+                    <input class="form-control social-name" data-i="${i}" value="${s.name || ''}">
+                </td>
+                <td>
+                    <input class="form-control social-link" data-i="${i}" value="${s.link || ''}">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm removeSocial" data-i="${i}">X</button>
+                </td>
+            </tr>`;
         });
+    
         $('#socialTable tbody').html(html);
         $('#speaker_socials').val(JSON.stringify(socials));
     }
+
     renderSocials();
 
     $('#addSocial').click(() => {
@@ -200,4 +271,20 @@ if ($id) {
         $('#removed_images').val(JSON.stringify(removedImages));
         $(this).parent().remove();
     });
+    
+    $(document).on('input', '.social-name', function () {
+        socials[$(this).data('i')].name = this.value;
+        $('#speaker_socials').val(JSON.stringify(socials));
+    });
+    
+    $(document).on('input', '.social-link', function () {
+        socials[$(this).data('i')].link = this.value;
+        $('#speaker_socials').val(JSON.stringify(socials));
+    });
+    
+    $(document).on('click', '.removeSocial', function () {
+        socials.splice($(this).data('i'), 1);
+        renderSocials();
+    });
+
 </script>

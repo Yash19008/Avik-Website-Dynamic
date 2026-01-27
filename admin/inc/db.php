@@ -21,4 +21,4 @@ $conn->query("SET time_zone = '+05:30'");
 // Set charset
 // $conn->set_charset("utf8mb4");
 
-$baseUrl = "https://worldwideeventsandconference.com";
+$baseUrl = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
