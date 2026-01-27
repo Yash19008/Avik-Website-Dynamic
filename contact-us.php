@@ -1,6 +1,66 @@
 <?php
 include './admin/inc/db.php';
 
+$successMsg = '';
+$errorMsg   = '';
+
+if (isset($_POST['submit-form'])) {
+    $name    = trim($_POST['username']);
+    $email   = trim($_POST['email']);
+    $phone   = trim($_POST['phone']);
+    $subject = trim($_POST['subject']);
+    $message = trim($_POST['message']);
+
+    if (empty($name) || empty($email) || empty($phone) || empty($subject)) {
+        $errorMsg = "Please fill in all required fields.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMsg = "Please enter a valid email address.";
+    } elseif (empty($_POST['g-recaptcha-response'])) {
+        $errorMsg = "Captcha verification failed. Please try again.";
+    } else {
+
+        $recaptchaSecret = "6Lc2_1csAAAAADRdpXzYDnYCuRhkpuRutE2qpMk6";
+        $recaptchaResponse = $_POST['g-recaptcha-response'];
+
+        $verifyResponse = file_get_contents(
+            "https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}"
+        );
+
+        $responseData = json_decode($verifyResponse);
+
+        if (!$responseData->success) {
+            $errorMsg = "Captcha verification failed. Please refresh and try again.";
+        } else {
+
+            $stmt = $conn->prepare(
+                "INSERT INTO contacts (name, email, phone, subject, message) 
+                 VALUES (?, ?, ?, ?, ?)"
+            );
+
+            if ($stmt) {
+                $stmt->bind_param(
+                    "sssss",
+                    $name,
+                    $email,
+                    $phone,
+                    $subject,
+                    $message
+                );
+
+                if ($stmt->execute()) {
+                    $successMsg = "Thank you! Your message has been sent successfully.";
+                } else {
+                    $errorMsg = "Something went wrong. Please try again later.";
+                }
+
+                $stmt->close();
+            } else {
+                $errorMsg = "Database error. Please contact administrator.";
+            }
+        }
+    }
+}
+
 /* ================= SEO META ================= */
 $title = "Contact Us | Worldwide Events and Conference";
 $meta_desc = "Get in touch with Worldwide Events and Conference for event planning, weddings, corporate events, and conferences. Call, email, or send us a message today.";
@@ -39,8 +99,8 @@ include 'inc/header2.php';
 
 <!-- contact-section -->
 <section class="contact-section pt_140 pb_140"
-         itemscope
-         itemtype="https://schema.org/ContactPage">
+    itemscope
+    itemtype="https://schema.org/ContactPage">
 
     <div class="pattern-layer" style="background-image: url(<?= $baseUrl ?>/assets/images/shape/shape-49.png);"></div>
 
@@ -50,12 +110,23 @@ include 'inc/header2.php';
             <!-- CONTACT FORM -->
             <div class="col-lg-9 col-md-12 col-sm-12 form-column">
                 <div class="form-inner">
+                    <?php if (!empty($successMsg)): ?>
+                        <div class="alert alert-success">
+                            <?= htmlspecialchars($successMsg) ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if (!empty($errorMsg)): ?>
+                        <div class="alert alert-danger">
+                            <?= htmlspecialchars($errorMsg) ?>
+                        </div>
+                    <?php endif; ?>
 
                     <form method="post"
-                          action=""
-                          id="contact-form"
-                          class="default-form"
-                          aria-label="Contact form">
+                        action=""
+                        id="contact-form"
+                        class="default-form"
+                        aria-label="Contact form">
 
                         <div class="row clearfix">
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
@@ -80,7 +151,7 @@ include 'inc/header2.php';
 
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <div class="g-recaptcha"
-                                     data-sitekey="6LefpU0sAAAAAIn2sGXOmNRH629vKLx_abwb3zYI"></div>
+                                    data-sitekey="6Lc2_1csAAAAAEoEW4v9akou7eL74LN1Z5faYmxi"></div>
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
@@ -96,8 +167,8 @@ include 'inc/header2.php';
 
             <!-- CONTACT INFO -->
             <div class="col-lg-3 col-md-12 col-sm-12 info-column"
-                 itemscope
-                 itemtype="https://schema.org/LocalBusiness">
+                itemscope
+                itemtype="https://schema.org/LocalBusiness">
 
                 <meta itemprop="name" content="Worldwide Events and Conference">
 
@@ -157,13 +228,13 @@ include 'inc/header2.php';
 <!-- google-map-section -->
 <section class="google-map-section">
     <div class="map-inner">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.726375674068!2d77.4436929752998!3d28.607984375678125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee5d3506faf1%3A0xf1b789fb5f1d64c1!2sAjnara%20Homes!5e0!3m2!1sen!2sin!4v1767855199734!5m2!1sen!2sin" 
-            width="600" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.726375674068!2d77.4436929752998!3d28.607984375678125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee5d3506faf1%3A0xf1b789fb5f1d64c1!2sAjnara%20Homes!5e0!3m2!1sen!2sin!4v1767855199734!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
