@@ -19,7 +19,7 @@ if (isset($_POST['submit-form'])) {
         $errorMsg = "Captcha verification failed. Please try again.";
     } else {
 
-        $recaptchaSecret = "6Lc2_1csAAAAADRdpXzYDnYCuRhkpuRutE2qpMk6";
+        $recaptchaSecret = "KEY_HERE";
         $recaptchaResponse = $_POST['g-recaptcha-response'];
 
         $verifyResponse = file_get_contents(
