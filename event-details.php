@@ -1,5 +1,9 @@
 <?php
 include './admin/inc/db.php';
+
+$title = "";
+$meta_desc = "";
+
 include 'inc/header2.php';
 ?>
 
