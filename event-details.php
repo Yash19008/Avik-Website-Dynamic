@@ -1,13 +1,6 @@
 <?php
 include './admin/inc/db.php';
 
-$title = "";
-$meta_desc = "";
-
-include 'inc/header2.php';
-?>
-
-<?php
 $id = (int)($_GET['id'] ?? 0);
 $event = mysqli_query($conn, "SELECT * FROM events WHERE id=$id LIMIT 1");
 $data = mysqli_fetch_assoc($event);
@@ -24,6 +17,10 @@ function event_image($file)
     return 'admin/uploads/events/' . basename($file);
 }
 
+$title = $data['title'] . " - WWEC";
+$meta_desc = "";
+
+include 'inc/header2.php';
 ?>
 
 <!-- page-title -->
